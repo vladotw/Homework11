@@ -4,13 +4,10 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
-//        task3();
+        task3();
     }
 
-
     // Task 1
-
-
     public static void task1() {
         System.out.println("Задача_3");
         System.out.println();
@@ -78,4 +75,24 @@ public class Main {
     }
 
     // Task 3
+    public static void task3() {
+        int deliveryDistance = 95;
+
+        toCalculateDeliveryTime(deliveryDistance);
+    }
+
+    public static void toCalculateDeliveryTime(int distance) {
+        int deliveryTime = 1;
+
+        if (distance <= 20) {
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (distance > 20 && distance <= 60) {
+            System.out.println("Потребуется дней: " + (deliveryTime + 1));
+        } else if (distance > 60 && distance <= 100) {
+            System.out.println("Потребуется дней: " + (deliveryTime + 2));
+        } else {
+            System.out.println("Доставка на такое расстояние не производится");
+        }
+
+    }
 }
