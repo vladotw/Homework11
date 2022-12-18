@@ -9,7 +9,7 @@ public class Main {
 
     // Task 1
     public static void task1() {
-        System.out.println("Задача_3");
+        System.out.println("Задача_1");
         System.out.println();
         int year = 2015;
 
@@ -37,6 +37,7 @@ public class Main {
     // Task 2
 
     public static void task2() {
+        System.out.println("Задача_2");
         System.out.println();
 
         int osName = 0;
@@ -76,6 +77,9 @@ public class Main {
 
     // Task 3
     public static void task3() {
+        System.out.println("Задача_2");
+        System.out.println();
+
         int deliveryDistance = 95;
 
         toCalculateDeliveryTime(deliveryDistance);
