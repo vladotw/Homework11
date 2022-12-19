@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Main {
     public static boolean isLeapYear(int year) {
 
         boolean leapYear;
-        leapYear = (((year % 4) == 0) && ((year % 100) != 0)) || ((year % 400) == 0);
+        leapYear = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
         return leapYear;
     }
 
@@ -49,7 +50,7 @@ public class Main {
         System.out.println();
     }
 
-    public static String defineOSName (int osName) {
+    public static String defineOSName(int osName) {
 
         if (osName == 0) {
             return "iOS";
@@ -59,6 +60,7 @@ public class Main {
             return "Unknown OS";
         }
     }
+
     public static String defineOSYear(int osYear) {
         int currentYear = LocalDate.now().getYear();
 
@@ -68,35 +70,41 @@ public class Main {
             return "обычную версию приложения";
         }
     }
-    public static void printNotification(int os, int Year) {
-        String osName = defineOSName(os);
-        String osYear = defineOSYear(Year);
 
-        System.out.println("Для " + osName + " " + Year + " выпуска установите " + osYear);
+    public static void printNotification(int os, int year) {
+        String osName = defineOSName(os);
+        String osYear = defineOSYear(year);
+
+        System.out.println("Для " + osName + " " + year + " выпуска установите " + osYear);
     }
 
     // Task 3
     public static void task3() {
-        System.out.println("Задача_2");
+        System.out.println("Задача_3");
         System.out.println();
 
-        int deliveryDistance = 95;
+        int deliveryDistance = 55;
 
-        toCalculateDeliveryTime(deliveryDistance);
+        printDeliveryTime(deliveryDistance);
     }
 
-    public static void toCalculateDeliveryTime(int distance) {
-        int deliveryTime = 1;
+    public static String toCalculateDeliveryTime(int distance) {
+        String deliveryTime = "";
 
         if (distance <= 20) {
-            System.out.println("Потребуется дней: " + deliveryTime);
+            deliveryTime = "Доставка займёт 1 день";
         } else if (distance > 20 && distance <= 60) {
-            System.out.println("Потребуется дней: " + (deliveryTime + 1));
+            deliveryTime = "Доставка займёт 2 дня";
         } else if (distance > 60 && distance <= 100) {
-            System.out.println("Потребуется дней: " + (deliveryTime + 2));
-        } else {
-            System.out.println("Доставка на такое расстояние не производится");
+            deliveryTime = "Доставка займёт 3 дня";
+        } else if (distance > 100) {
+            deliveryTime = "Доставка на такое расстояние не производится";
         }
+        return deliveryTime;
+    }
 
+    public static void printDeliveryTime(int enteredDistance) {
+
+        System.out.println(toCalculateDeliveryTime(enteredDistance));
     }
 }
